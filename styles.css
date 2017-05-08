@@ -10,3 +10,34 @@ img {
   padding: 2px;
   border: 10px solid #00FF00;
 }
+
+#field-margin {
+  margin: 10%;
+}
+
+button {
+  background-color: lightyellow;
+  position: absolute;
+  top: 143%;
+  left: 11%;
+}
+
+#ul-font {
+  font-family: arial;
+}
+
+#footer-center {
+  font-weight: bold;
+  font-size: 1em;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+a:hover {
+    color: white;
+  }
+
+a:visited { 
+    color: red;
+}
