@@ -1,0 +1,41 @@
+#show {
+
+}
+
+#calculator-container
+{
+background-color:#3d4543;
+height:180px;
+width:230px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:40%;
+} 
+
+#clear, #sign, #divide {
+  line-height: 2em;
+  padding: 0 2.5em;
+}
+
+#clear, #sign, #divide {
+  background: linear-gradient(#11A1D6, #0E86B2);
+  text-shadow: 1px 1px 1px #0E86B2;
+}
+
+#seven, #eight, #nine, #multiply, #four, #five, #six, #minus, #one, #two, #three, #plus, #zero{
+  line-height: 2em;
+  padding: 0 1.9em;
+}
+
+#seven, #eight, #nine, #multiply, #four, #five, #six, #minus, #one, #two, #three, #plus, #zero, #equals{
+  background: linear-gradient(#11A1D6, #0E86B2);
+  text-shadow: 1px 1px 1px #0E86B2;
+}
+
+#equals{
+    float: right;
+    line-height: 2em;
+    padding: 0 2.1em;
+}
+
