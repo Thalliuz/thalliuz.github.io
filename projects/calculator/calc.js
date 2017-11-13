@@ -41,14 +41,14 @@ $(document).ready(function() {
       number2 = parseInt(num2)
       var complete = number1 - number2
       console.log(complete)
-    } else if (func === "*") {
+    } else if (func === "X") {
       num1 = num1.join("")
       number1 = parseInt(num1)
       num2 = num2.join("")
       number2 = parseInt(num2)
       var complete = number1 * number2
       console.log(complete)
-    } else if (func === "/") {
+    } else if (func === "÷") {
       num1 = num1.join("")
       number1 = parseInt(num1)
       num2 = num2.join("")
