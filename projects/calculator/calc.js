@@ -1,59 +1,79 @@
 $(document).ready(function() {
-  var num1 = []
-
-  var num2 = []
+  
+  var fullAmount = []
+  
+  var num = []
 
   var func = null
 
-  $('.num').click(function() {
-    if (func === null) {
-      num1.push($(this).text())
-      console.log(num1)
-      $("#res").val(num1.join(''));
-
+  function evaluate(array){
+    if (array[1] === "+") {
+      var complete = array[0] + array[2]
+      array = [complete]
+      console.log(complete)
+    } else if (array[1] === "-") {
+      var complete = array[0] - array[2]
+      array = [complete]
+      console.log(complete)
+    } else if (array[1] === "X") {
+      var complete = array[0] * array[2]
+      array = [complete]
+      console.log(complete)
+    } else if (array[1] === "÷") {
+      var complete = array[0] / array[2]
+      array = [complete]
+      console.log(complete)
     } else {
-      num2.push($(this).text())
-      console.log(num2)
-      $("#res").val(num2.join(''));
+      console.log("error")
     }
+    $("#res").val(complete);
+  }
+
+  $('.num').click(function() {
+      num.push($(this).text())
+      console.log(num)
+      console.log(fullAmount)
+      $("#res").val(num.join(''));
   });
 
   $('.action').click(function() {
     func = $(this).text();
-    console.log(func)
-    $("#res").val(func);
+    num = num.join("")
+    fullAmount.push(parseInt(num))
+    if (fullAmount.length === 3) {
+      evaluate(fullAmount)
+    }else {
+      fullAmount.push(func[0])
+      console.log(func)
+    }
+
+    $("#res").val(fullAmount);
+    func = null
+    num = []
   });
 
 
 
   $('#equals').click(function() {
-    if (func === "+") {
-      num1 = num1.join("")
-      number1 = parseInt(num1)
-      num2 = num2.join("")
-      number2 = parseInt(num2)
-      var complete = number1 + number2
+    if (fullAmount[1] === "+") {
+      fullAmount.push(parseInt(num))
+      var complete = fullAmount[0] + fullAmount[2]
+      fullAmount = [complete]
       console.log(complete)
-    } else if (func === "-") {
-      num1 = num1.join("")
-      number1 = parseInt(num1)
-      num2 = num2.join("")
-      number2 = parseInt(num2)
-      var complete = number1 - number2
+    } else if (fullAmount[1] === "-") {
+      fullAmount.push(parseInt(num))
+      var complete = fullAmount[0] - fullAmount[2]
+      fullAmount = [complete]
       console.log(complete)
-    } else if (func === "X") {
-      num1 = num1.join("")
-      number1 = parseInt(num1)
-      num2 = num2.join("")
-      number2 = parseInt(num2)
-      var complete = number1 * number2
+    } else if (fullAmount[1] === "X") {
+      fullAmount.push(parseInt(num))
+      var complete = fullAmount[0] * fullAmount[2]
+      fullAmount = [complete]
       console.log(complete)
-    } else if (func === "÷") {
-      num1 = num1.join("")
-      number1 = parseInt(num1)
-      num2 = num2.join("")
-      number2 = parseInt(num2)
-      var complete = number1 / number2
+    } else if (fullAmount[1] === "÷") {
+      fullAmount.push(parseInt(num))
+      var complete = fullAmount[0] / fullAmount[2]
+      fullAmount = [complete]
       console.log(complete)
     } else {
       console.log("error")
@@ -62,12 +82,12 @@ $(document).ready(function() {
   });
 
   $('#clear').click(function() {
-    num1 = []
-    num2 = []
+    num = []
+    fullAmount = []
     func = null
     $("#res").val("")
-    console.log(num1)
-    console.log(num2)
+    console.log(num)
+    console.log(fullAmount)
     console.log(func)
 
   });
