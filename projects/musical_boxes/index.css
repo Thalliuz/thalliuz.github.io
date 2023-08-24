@@ -1,5 +1,6 @@
 body {
-    background-color: black;   
+    background: linear-gradient(to right, #FE1A1A
+, #FC5C33 , #F8FF7A , #00FF00 , #247DFF , #9933FF , #FF00FF);   
 }
 
 #instrument {
